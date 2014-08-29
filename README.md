@@ -1,5 +1,7 @@
-# Create Vagrant Environment for OLE QA Testing
+# OLE QA Vagrant
 ---
+## Create an Environment for Testing and Development with Kuality OLE
+
 This repository installs a Vagrant box for 32-bit Ubuntu 14.04 (Trusty Tahr)
 with a single-user RVM installation and Ruby 2.1.2.  This environment can 
 be used for running or developing automated tests with [Kuality OLE](http://github.com/kuali/kuality-ole).
