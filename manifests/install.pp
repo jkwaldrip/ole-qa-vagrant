@@ -1,13 +1,22 @@
 # mode: -*- ruby -*-
 # vi: set ft=ruby :
 
-include single_user_rvm
+include rvm
 
 user { 'vagrant':
        ensure => present
 }
-
-single_user_rvm::install { 'vagrant': }
-single_user_rvm::install_ruby { 'ruby-2.1.2':
-                                user => 'vagrant'
+rvm::system_user { vagrant: }
+notify {"Installing Ruby 2.1.2": }
+notify {"This may take some time": }
+rvm_system_ruby { 'ruby-2.1.2':
+                    ensure => present,
+                    default_use => true
+}
+notify {"Installing bundler for Ruby 2.1.2":}
+rvm_gem { 'bundler':
+          name => 'bundler',
+          ruby_version => 'ruby-2.1.2',
+          ensure => 'latest',
+          require => Rvm_system_ruby['ruby-2.1.2'];
 }
