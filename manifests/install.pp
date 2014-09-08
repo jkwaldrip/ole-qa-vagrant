@@ -26,4 +26,11 @@ node default {
   rvm::gem { 'bundler':
              ruby => Rvm::Ruby['default']
   }
+
+  include git
+
+  git::repo { 'kuality-ole':
+              path => '/home/vagrant/kuality-ole',
+              source => 'https://github.com/kuali/kuality-ole.git'
+  }
 }
