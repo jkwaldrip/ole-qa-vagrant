@@ -18,6 +18,15 @@ node default {
             ensure => 'installed'
   }
 
+  package { 'xvfb':
+            ensure => 'installed'
+  }
+
+
+  package { 'firefox':
+            ensure => '28.0+build2-0ubuntu2',
+  }
+
   rvm::ruby { 'default':
               user => 'vagrant',
               version => 'ruby-2.1.2'
