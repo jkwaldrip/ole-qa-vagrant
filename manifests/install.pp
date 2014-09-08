@@ -42,4 +42,9 @@ node default {
               path => '/home/vagrant/kuality-ole',
               source => 'https://github.com/kuali/kuality-ole.git'
   }
+
+  exec { 'chown_repo':
+         path => '/bin/',
+         command => 'chown -R vagrant /home/vagrant/kuality-ole'
+  }
 }
