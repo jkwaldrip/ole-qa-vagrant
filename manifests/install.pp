@@ -1,22 +1,29 @@
 # mode: -*- ruby -*-
 # vi: set ft=ruby :
 
-include rvm
+node default {
+  user { 'vagrant':
+          ensure => present
+  }
 
-user { 'vagrant':
-       ensure => present
-}
+  package { 'git':
+            ensure => 'installed'
+  }
 
-rvm::system_user { vagrant: }
+  package { 'curl':
+            ensure => 'installed'
+  }
 
-rvm_system_ruby { 'ruby-2.1.2':
-                    ensure => present,
-                    default_use => true
-}
+  package { 'make':
+            ensure => 'installed'
+  }
 
-rvm_gem { 'bundler':
-          name => 'bundler',
-          ruby_version => 'ruby-2.1.2',
-          ensure => 'latest',
-          require => Rvm_system_ruby['ruby-2.1.2'];
+  rvm::ruby { 'default':
+              user => 'vagrant',
+              version => 'ruby-2.1.2'
+  }
+
+  rvm::gem { 'bundler':
+             ruby => Rvm::Ruby['default']
+  }
 }

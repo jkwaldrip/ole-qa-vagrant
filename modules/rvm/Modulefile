@@ -1,12 +1,11 @@
-name 'maestrodev-rvm'
-version '1.6.4'
+name    'DracoBlue-rvm'
+version '0.2.1'
+source 'http://github.com/dracoblue/puppet-rvm'
+author 'DracoBlue'
+license 'MIT'
+summary 'Single User Ruby/Gem module (based on RVM) for Puppet >=3.0x'
+description 'This module can be used to install ruby+gems for a single user by using rvm internally.'
+project_page 'http://github.com/dracoblue/puppet-rvm'
 
-summary 'A puppet module for installing and using RVM (Ruby Version Manager)'
-author 'maestrodev & Brandon Turner <bt@brandonturner.net>'
-license 'Modified BSD License'
-project_page 'http://github.com/maestrodev/puppet-rvm'
-source 'http://github.com/maestrodev/puppet-rvm'
-description 'Installing and using RVM (Ruby Version Manager)'
-
-dependency 'puppetlabs/stdlib', '>=3.2.0'
-# apache is not included as a dependency to avoid installing it when is not needed most times.
+dependency 'puppetlabs/stdlib', '>= 4.0.0'
+dependency 'eirc/single_user_rvm', '>= 0.3.0'

@@ -1,14 +1,31 @@
 {
-  "name": "maestrodev-rvm",
-  "version": "1.6.4",
-  "author": "maestrodev & Brandon Turner <bt@brandonturner.net>",
-  "summary": "A puppet module for installing and using RVM (Ruby Version Manager)",
-  "license": "Modified BSD License",
-  "source": "http://github.com/maestrodev/puppet-rvm",
-  "project_page": "http://github.com/maestrodev/puppet-rvm",
-  "issues_url": "https://github.com/maestrodev/puppet-rvm/issues",
-  "description": "Installing and using RVM (Ruby Version Manager)",
+  "name": "DracoBlue-rvm",
+  "version": "0.2.1",
+  "source": "http://github.com/dracoblue/puppet-rvm",
+  "author": "DracoBlue",
+  "license": "MIT",
+  "summary": "Single User Ruby/Gem module (based on RVM) for Puppet >=3.0x",
+  "description": "This module can be used to install ruby+gems for a single user by using rvm internally.",
+  "project_page": "http://github.com/dracoblue/puppet-rvm",
   "dependencies": [
-    {"name":"puppetlabs/stdlib","version_requirement":">=3.2.0"}
-  ]
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 4.0.0"
+    },
+    {
+      "name": "eirc/single_user_rvm",
+      "version_requirement": ">= 0.3.0"
+    }
+  ],
+  "types": [
+
+  ],
+  "checksums": {
+    "Modulefile": "a9df6c405517e662912c1aed8c303aaa",
+    "README.md": "71bc91117728b4e15e26f2944cfbff3f",
+    "bin/build_package": "4650367c1592bc35b13e6d27d773161a",
+    "manifests/bash_exec.pp": "296fbada0df04a230eb16f1c64164a6e",
+    "manifests/gem.pp": "aec43acd21cd23511f5a4442a9ba04df",
+    "manifests/ruby.pp": "a2ebc1b3d3ae22d2e7626f2cbfa87fc4"
+  }
 }
