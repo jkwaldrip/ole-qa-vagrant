@@ -43,4 +43,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     puppet.manifest_file  = 'install.pp'
   end
 
+  config.vm.synced_folder 'pub/','/home/vagrant/pub/',create: true,disabled: false,owner: 'vagrant'
 end

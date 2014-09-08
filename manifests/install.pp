@@ -36,11 +36,12 @@ node default {
              ruby => Rvm::Ruby['default']
   }
 
-  include git
-
-  git::repo { 'kuality-ole':
-              path => '/home/vagrant/kuality-ole',
-              source => 'https://github.com/kuali/kuality-ole.git'
+  vcsrepo { '/home/vagrant/testing':
+            ensure => present,
+            provider => git,
+            source => 'https://github.com/kuali/kuality-ole.git',
+            revision => 'master',
+            user => 'vagrant'
   }
 
 }
